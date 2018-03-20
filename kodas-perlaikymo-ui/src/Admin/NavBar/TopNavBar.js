@@ -30,7 +30,6 @@ class TopNavBar extends Component {
                   <li><Link to="/admin/register/service"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Paslauga</Link></li>
                   <li role="separator" className="divider"></li>
                   <li><Link to="/admin/services"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Paslaugos</Link></li>
-                  <li><Link to="/admin/pharmacists"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Vaistininkų sąrašas</Link></li>
                 </ul>
               </li>
             </ul>
