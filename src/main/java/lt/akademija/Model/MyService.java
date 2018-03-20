@@ -1,9 +1,6 @@
 package lt.akademija.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -16,6 +13,7 @@ public class MyService implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private Long id;
+    @Column(unique = true)
 	private String serviceName;
 	private String price;
 	private String category;
