@@ -8,28 +8,32 @@ const green = {
     padding: '5px'
 }
 
-const AdminComponent = (props) => {
-    var {id, name, surname, username} = props;
+const ServiceComponent = (props) => {
+    var {id, serviceName, price, category, description, picture} = props;
 
     var handleClick = (event) => {
-        props.history.push("/admin/admin/edit/" + id);
+        props.history.push("/admin/service/edit/" + id);
         event.preventDefault();
     };
 
     var getAdmin = (event) => {
-        props.history.push("/admin/admin/" + id);
+        props.history.push("/admin/service/buy");
         event.preventDefault();
     };
 
     return (
         <tr>
             <td>{id}</td>
-            <td>{name}</td>
-            <td>{surname}</td>
-            <td>{username}</td>
+            <td>{serviceName}</td>
+            <td>{price}</td>
+            <td>{category}</td>
+            <td>{description}</td>
+            <td>{picture}</td>
             <td>
                 <span id={id} className="glyphicon glyphicon-wrench" aria-hidden="true" style={green}
                       onClick={handleClick}></span>
+                <span id={id} className="glyphicon glyphicon-eye-open" aria-hidden="true" style={green}
+                      onClick={getAdmin}></span>
                 <span id={id} className="glyphicon glyphicon-eye-open" aria-hidden="true" style={green}
                       onClick={getAdmin}></span>
             </td>
@@ -38,4 +42,4 @@ const AdminComponent = (props) => {
 
 };
 
-export default AdminComponent;
+export default ServiceComponent;

@@ -8,7 +8,7 @@ const RegisterServiceComponent = (props) => {
             <div className="form-group">
                 <label className="col-sm-2 control-label">Pavadinimas</label>
                 <div className="col-sm-3">
-                    <input type="text" className="form-control" id="serviceName" placeholder="Pavadinimas" value={props.servceName}
+                    <input type="text" className="form-control" id="serviceName" placeholder="Pavadinimas" value={props.serviceName}
                            onChange={props.onChange}/>
                 </div>
             </div>
@@ -23,7 +23,7 @@ const RegisterServiceComponent = (props) => {
             <div className="form-group">
                 <label className="col-sm-2 control-label">Nuotrauka</label>
                 <div className="col-sm-3">
-                    <input type="number" className="form-control" id="picture" placeholder="Nuotrauka" value={props.picture}
+                    <input type="text" className="form-control" id="picture" placeholder="Nuotrauka" value={props.picture}
                            onChange={props.onChange}/>
                 </div>
             </div>

@@ -63,7 +63,7 @@ class RegisterProvider extends Component {
     render() {
         return (
             <div>
-                <RegisterDoctorComponent
+                <RegisterProviderComponent
                     name={this.state.providerName}
                     surname={this.state.city}
                     username={this.state.companyId}

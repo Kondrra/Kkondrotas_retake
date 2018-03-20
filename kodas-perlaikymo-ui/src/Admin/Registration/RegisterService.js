@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {API} from '../ApiUrl';
-import RegisterPharmacistComponent from './RegisterPharmacistComponent';
-import axios from 'axios';
-axios.defaults.withCredentials = true;
 
-class RegisterPharmacist extends Component {
+import axios from 'axios';
+import RegisterServiceComponent from "./registerServiceComponent";
+
+class RegisterService extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,43 +31,27 @@ class RegisterPharmacist extends Component {
             alert("Visi laukai turi būti užpildyti");
         } else return true;
     }
-    PasswordLength(){ //Checks whether password has 6 or more symbols.
-        if (this.state.password.length < 6) {
-            alert("Slaptažodis turi būti sudarytas iš bent 6 simbolių");
-        } else {
-            return true;
-        }
-    }
 
     handleClick = (event) => {
-        if (this.EmptyFields() && this.PasswordLength()) {
-            var outputPharmacist = {
-                name: this.state.name,
-                surname: this.state.surname,
-                username: this.state.username,
-                password: this.state.password,
-                companyType: this.state.companyType,
-                companyName: this.state.companyName
+        if (this.EmptyFields()) {
+            var outputService = {
+                serviceName: this.state.serviceName,
+                price: this.state.price,
+                category: this.state.category,
+                description: this.state.description,
+                picture: this.state.picture,
             };
         }
-        if (this.state.name.length > 30){
-            alert("Vardas turi neviršyti 30 simbolių");
-        }
-        if (this.state.surname.length > 30){
-            alert("Pavardė turi neviršyti 30 simbolių")
-        }
-        axios.post(API + "/api/admin/pharmacists/new", outputPharmacist)
+        axios.post(API + "/api/admin/services/new", outputService)
             .then((response) => {
                 this.setState({
-                    name: '',
-                    surname: '',
-                    username: '',
-                    password: '',
-                    companyType: '',
-                    companyName: ''
+                   serviceName: '',
+                    price: '',
+                    category: '',
+                    description: '',
+                    picture: ''
                 });
-                alert("Vaistininkas užregistruotas!");
-                this.props.history.push("/admin/pharmacists");
+                alert("Paslauga užregistruota!");
             })
             .catch((error) => {
                 console.log(error);
@@ -78,13 +62,12 @@ class RegisterPharmacist extends Component {
     render() {
         return (
             <div>
-                <RegisterPharmacistComponent
-                    name={this.state.name}
-                    surname={this.state.surname}
-                    username={this.state.username}
-                    password={this.state.password}
-                    companyType={this.state.companyType}
-                    companyName={this.state.companyName}
+                <RegisterServiceComponent
+                    name={this.state.serviceName}
+                    surname={this.state.price}
+                    username={this.state.category}
+                    password={this.state.description}
+                    companyType={this.state.picture}
                     onChange={this.handleChange}
                     onClick={this.handleClick}
                     history={this.state.history}
@@ -94,4 +77,4 @@ class RegisterPharmacist extends Component {
     }
 }
 
-export default RegisterPharmacist;
+export default RegisterService;
