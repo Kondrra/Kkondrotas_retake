@@ -1,0 +1,31 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "0.17.1",
+    "bootstrap": "3.3.7",
+    "jquery": "^3.2.1",
+    "rc-pagination": "^1.15.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-infinite": "^0.12.1",
+    "react-infinite-scroll-component": "^3.0.2",
+    "react-js-pagination": "^3.0.1",
+    "react-paginate": "^5.1.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-tap-event-plugin": "^3.0.2",
+    "react-virtualized": "^9.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "homepage": "./",
+  "eslintConfig": {
+    "extends": "react-app"
+  }
+}
