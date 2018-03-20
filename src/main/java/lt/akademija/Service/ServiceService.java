@@ -17,9 +17,7 @@ import lt.akademija.Model.CreateServiceCmd;
 import lt.akademija.Model.MyService;
 import lt.akademija.Model.User;
 import lt.akademija.Repository.ServiceRepository;
-import lt.akademija.Repository.PatientRepository;
-import lt.akademija.Repository.PrescriptionRepository;
-import lt.akademija.Repository.RecordRepository;
+
 
 
 @Service

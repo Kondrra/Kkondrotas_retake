@@ -42,7 +42,7 @@ class RegisterService extends Component {
                 picture: this.state.picture,
             };
         }
-        axios.post(API + "/api/admin/services/new", outputService)
+        axios.post(API + "/api/services/new", outputService)
             .then((response) => {
                 this.setState({
                    serviceName: '',

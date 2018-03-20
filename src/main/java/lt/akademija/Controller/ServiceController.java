@@ -41,17 +41,17 @@ public class ServiceController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping(value = "/patients")
+	@GetMapping(value = "/services")
 	@ApiOperation(value = "Get patient list", notes = "Returns list of all patients")
-	public List<MyService> getPatients() {
-		log.info("Returned a list of all doctors");
+	public List<MyService> getServices() {
+		log.info("Returned a list of all services");
 		return serviceService.getService();
 	}
 
 
-	@PostMapping(value = "admin/services/new")
+	@PostMapping(value = "/services/new")
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(value = "Create patients", notes = "Creates patient")
+	@ApiOperation(value = "Create patients", notes = "Creates service")
 	public void createService(@RequestBody CreateServiceCmd cmd) {
 		log.info("Request to create a patient");
 		serviceService.createService(cmd);
@@ -59,16 +59,16 @@ public class ServiceController {
 
 	@PutMapping(value = "/services/{id}")
 	@ApiOperation(value = "Update patient", notes = "Updates patient details")
-	public void updatePatient(@RequestBody CreatePatientCmd cmd, @PathVariable Long id) {
-		log.info("Request to update a patient");
-		patientService.updatePatient(cmd, id);
+	public void updateService(@RequestBody CreateServiceCmd cmd, @PathVariable Long id) {
+		log.info("Request to update a service");
+		serviceService.updateDoctor(cmd, id);
 	}
-
+/* assign service to provider.
 	@PutMapping(value = "/patient/{patientId}/{doctorId}")
 	@ApiOperation(value = "Assign patient to doctor", notes = "Assigns patient to doctor")
 	public void assignDoctorToPatient(@PathVariable Long patientId, @PathVariable Long doctorId) {
 		log.info("Request to assign a patient to a doctor");
 		patientService.assignPatient(patientId, doctorId);
-	}
+	}*/
 
 }
